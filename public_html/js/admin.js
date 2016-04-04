@@ -4,13 +4,16 @@ $(function () {
     VERSION = "v1";
     
     Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
-
-    if(Backendless.UserService.isValidLogin()){
+    
+    Backendless.UserService.logout();
+    
+    if(Backendless.UserService.getCurrentUser()){
         userLoggedIn(Backendless.LocalCache.get("current-user-id"));
     } else {
         var loginScript = $("#login-template").html();
         var loginTemplate = Handlebars.compile(loginScript);
         $('.main-container').html(loginTemplate);
+        
     }
     
     $(document).on('submit', '.form-signin', function(event) {
@@ -86,4 +89,12 @@ function userLoggedOut(){
 function gotError(error) {
     console.log("Error message - " + error.message);
     console.log("Error code - " + error.code);
+    Materialize.toast('Incorrect Username or Password', 3000);
 }
+
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
