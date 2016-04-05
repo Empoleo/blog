@@ -98,3 +98,9 @@ function gotError(error) {
       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     }
   );
+  
+  
+  function myFunction() {
+    var x = document.getElementById("myText").required;
+    document.getElementById("demo").innerHTML = x;
+}
