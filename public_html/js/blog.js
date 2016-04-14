@@ -1,3 +1,4 @@
+$(".button-collapse").sideNav();
 $(function () {
     var APPLICATION_ID = "119CF616-6BCB-C750-FFE4-DF4F6FE81D00",
     SECRET_KEY = "62F4611F-4E7F-AF77-FF61-C1A9DF55BC00",
@@ -31,3 +32,5 @@ function Posts(args) {
     this.content = args.content || "";
     this.authorEmail = args.authorEmail || "";
 }
+
+$(".dropdown-button").dropdown();

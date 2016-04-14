@@ -90,7 +90,7 @@ function userLoggedOut(){
 function gotError(error) {
     console.log("Error message - " + error.message);
     console.log("Error code - " + error.code);
-    Materialize.toast('Incorrect Username or Password', 3000);
+    Materialize.toast('Incorrect Login', 3000);
 }
 
   $('.button-collapse').sideNav({
